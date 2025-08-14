@@ -1,9 +1,8 @@
 package com.nosql.repository;
 
 import com.nosql.entity.Book;
-import org.springframework.data.mongodb.repository.MongoRepository;
-import java.util.List;
+import org.springframework.data.neo4j.repository.Neo4jRepository;
 
-public interface BookRepository extends MongoRepository<Book, String> {
-    List<Book> findByGenre(String genre);
+public interface BookRepository extends Neo4jRepository<Book, Long> {
+    Book findByTitle(String title);
 }
